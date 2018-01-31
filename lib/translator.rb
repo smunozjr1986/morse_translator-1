@@ -1,4 +1,4 @@
-class Translator
+class Translate
   attr_reader :dictionary
 
   def initialize
@@ -39,5 +39,14 @@ class Translator
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+
+  def eng_to_morse(words)
+    morse = []
+    letters = words.split('')
+    letters.each do |letter|
+      morse << @dictionary[letter]
+    end
+    morse.join 
   end
 end
