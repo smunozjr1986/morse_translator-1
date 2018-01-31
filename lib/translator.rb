@@ -43,10 +43,26 @@ class Translate
 
   def eng_to_morse(words)
     morse = []
-    letters = words.split('')
+    letters = words.split("")
     letters.each do |letter|
-      morse << @dictionary[letter]
+      morse << @dictionary[letter.downcase]
     end
-    morse.join 
+    morse.join
   end
+
+  # def from_file(file)
+  # end
+
+  def morse_to_eng(code)
+    english = []
+    morse_letters = code.split
+      morse_letters.each do |letter|
+      english << @dictionary.invert[letter]
+    end
+    english.join
+  end
+
+
+
+
 end

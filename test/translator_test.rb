@@ -19,5 +19,22 @@ class TranslatorTest <Minitest::Test
   def test_case_sensitive_with_numbers
     translator = Translate.new
 
+    assert_equal "......-...-..--- .-----.-..-..-..", translator.eng_to_morse("Hello World")
 
+    assert_equal "-......-.. .-.-.. ...-- ..........--....", translator.eng_to_morse("There are 3 ships")
+  end
+
+  # def test_from_file
+  #   translator = Translate.new
+  #   translator.from_file("input.txt")
+  #
+  #   assert_equal ".. .--- ..-. .- ..-....-..."
+  # end
+
+  def test_translate_morse_to_english
+    translator = Translate.new
+
+    assert_equal "hello world",
+    translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
+  end
 end
